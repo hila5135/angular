@@ -1,0 +1,45 @@
+<p>save-teacher works!</p>
+    <!-- @for (item of teachers;track item.id)
+    {
+    <form action="">
+    <span> {{item.id}}</span>
+    <input type="text" [(ngModel)]="teacher.name" value={{item.name}} required>
+    </form>
+   
+        <label>כיתות:</label>
+        <div *ngFor="let className of teacher.classes; let j = index">
+          <input type="text" [(ngModel)]="teacher.classes[j]" name="className{{ item }}{{ j }}" />
+
+    </div>
+     -->
+     <!-- <div>
+        @for(classs of teacher.classes ; track classs ;let idx = $index){
+            <input id="name" [(ngModel)]="teacher.name" name="name" required>
+
+            <input [(ngModel)]="teacher.classes[idx]"  required> -->
+        <!-- }
+     </div>
+<button (click)="onSave(teacher)">save chanegs</button> -->
+<!-- }  -->
+
+<form (ngSubmit)="onSave()">
+    <label for="id">Code:</label>
+    <input id="id" [(ngModel)]="teacher.id" name="id">
+
+
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="teacher.name" name="name" required>
+    
+    <label for="classes">Classes:</label>
+    <input id="classes" [(ngModel)]="teacher.classes" name="classes">
+    
+    <button type="submit">Submit</button>
+</form>
+
+<div>teacher list:</div>
+<div>
+    @for (t of this.teachers; track t) {
+        {{t.id}}  {{t.name}}  {{t.classes}}
+        <div></div>
+    }
+</div>
