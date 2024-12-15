@@ -28,10 +28,10 @@ export class HighlightCourseDirective {
     'LightGreen',
     'LightBlue',
     'SkyBlue',
-    'Beige',       // צבע יותר כהה מ-Ivory
-    'LightSeaGreen', // צבע יותר כהה מ-MintCream
-    'Lavender',     // צבע כהה יותר מ-FloralWhite
-    'MediumPurple', // צבע כהה יותר מ-LavenderBlush
+    'Beige',   
+    'LightSeaGreen', 
+    'Lavender',    
+    'MediumPurple', 
     'PapayaWhip',
     'AntiqueWhite',
     'Seashell'
