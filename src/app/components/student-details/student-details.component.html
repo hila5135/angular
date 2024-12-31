@@ -13,15 +13,18 @@
     @if (!currentStudent.isActive)
     {
         DepartureDate:<input #DepartureDate type="date" [value]="currentStudent.DepartureDate">
+    }  
+    @if (currentStudent.Payed)
+    {
+      <app-courses-list></app-courses-list>
     }
-    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">שמירה</button>
-    <button (click)="DeleteStudent()">delete</button>
-    <app-infromation-popup></app-infromation-popup>
-
     @if(flag){
       <button (click)="ClosePopup()">exit</button>
     }
-
-</div>
+    
+    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">שמירה</button>
+    <button (click)="DeleteStudent()">delete</button>
+    <app-infromation-popup></app-infromation-popup>
+  </div>
 
 

@@ -2,10 +2,11 @@ import { Component,Input,Output,EventEmitter,ViewChild } from '@angular/core';
 import { InfromationPopupComponent } from '../infromation-popup/infromation-popup.component';
 //  import { EventEmitter } from 'stream';
 import { student } from '../../../models/student';
+import { CoursesListComponent } from '../courses-list/courses-list.component';
 @Component({
   selector: 'app-student-details',
   standalone: true,
-  imports: [InfromationPopupComponent],
+  imports: [InfromationPopupComponent, CoursesListComponent],
   templateUrl: './student-details.component.html',
   styleUrl: './student-details.component.css'
 })
