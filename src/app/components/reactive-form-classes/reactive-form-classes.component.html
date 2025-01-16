@@ -1,0 +1,32 @@
+<p>reactive-form-classes works!</p>
+<form [formGroup]="classesForm" (ngSubmit)="onSave()">
+    <label for="IdClass">Class Id:</label>
+    <input id="IdClass" type="number" placeholder="classId" formControlName="IdClass">
+    
+    @if(f['IdClass'].touched && f['IdClass'].hasError('required')){
+    <small>id is requrid</small>
+    }
+    @if(f['IdClass'].touched && f['IdClass'].hasError('maxLength')){
+        <small>id must be smaller</small>
+        }
+        @if(f['IdClass'].touched && f['IdClass'].hasError('max')){
+            <small>id must be smaller</small>
+            }   
+   <br>
+    <label for="NameClass">Class Name:</label>
+    <input id="NameClass" type="text" placeholder="className" formControlName="NameClass">
+    @if(f['NameClass'].touched && f['NameClass'].hasError('required')){
+        <small>name is requrid</small>
+        }
+        @if(f['NameClass'].touched && f['NameClass'].hasError('minlength')){
+            <small>name must be 1 min characters</small>
+            }    
+    <br>
+
+   
+    <button type="submit" [disabled]="classesForm.invalid">Submit - Save</button>
+    @for(item of this.AllClasses;track item.IdClass&& item.NameClass){
+    <p>{{item.NameClass}}{{item.IdClass}}</p>
+}
+</form>
+

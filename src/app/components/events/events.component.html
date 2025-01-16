@@ -1,0 +1,8 @@
+@for( e of (eventService.events$ | async ); track e.id)
+{
+    {{e | json}} 
+} 
+
+@empty{
+    <h2>we are working for you....</h2>
+}

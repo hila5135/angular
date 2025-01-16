@@ -1,0 +1,53 @@
+
+<p>student-list works!</p>
+<!-- @for(item of students; track item){
+    <li>{{item.firstName}} {{item.surname}} , {{item.address}} ,{{ item.phone}} ,id:{{item.id}}</li>
+    <button (click)="show(item.id)">עריכה</button> 
+    @if(selected==item.id) {<app-student-details [id]="selected" [list] = "students"></app-student-details>}
+    @if(selected==item.id && item.isActive == false){
+        {{item.leaveDate}}
+    }
+}
+<br> -->
+<!-- <button (click)="add()">הוספה</button>
+@if(selected==-1){<app-student-details [id]="0" [list] = "students"></app-student-details>}
+
+<app-student-details (onSaveStudent)="saveStudent($event)"></app-student-details> -->
+<ng-container *ngTemplateOutlet="sentence"></ng-container> 
+
+@for(item of students;track item.Id)
+{
+    <li>{{item.Id}} {{item.Name}} 
+    </li>
+    <button (click)= "viewDetailsStudent(item.Id)" >עריכה</button>
+    @if (selectedid==item.Id){
+        <app-student-details [currentStudent]="item"></app-student-details>
+    }
+     @if (item.Payed) {
+ 
+        <!-- <h3>{{item.Name}}!!  you payied us , so you can choose courses:</h3>
+        @for(course of allCourses ; track course )
+        {
+          <span appHighlightCourse>  <input type="checkbox" [value]="course.IdCourse"> {{course.IdCourse}}  {{course.NameCourse}} </span>
+          <br>  
+          
+        }
+         -->
+         <app-courses-list></app-courses-list>
+         
+        }
+    <br>
+    {{item.Name | iconPipe }}
+
+}
+<br>
+<button (click)="AddStudent()">הוספה</button>
+@if (selectedid==-1){
+    <app-student-details (saveStudent)="ParentSave($event)" [currentStudent]="null"></app-student-details>
+}
+
+ <ng-template #sentence>
+   <p>The student list!!!(ng template)</p> 
+</ng-template> 
+
+<ng-container *ngTemplateOutlet="sentence"></ng-container> 

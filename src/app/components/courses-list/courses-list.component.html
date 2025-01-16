@@ -1,0 +1,6 @@
+<p>courses-list works!</p>
+<div *ngFor="let course of allCourses; ">
+          <span appHighlightCourse>
+          <input type="checkbox" [value]="course.IdCourse"> {{course.IdCourse}} - {{course.NameCourse}} </span>
+          <br>            
+</div>
