@@ -16,7 +16,7 @@ export class EventServiceService {
 
 
   getEvents(){
-    this.http.get<MyEvent[]>(this.url).subscribe( (data: MyEvent[])=>{
+    this.http.get<MyEvent[]>(this.url).subscribe((data: MyEvent[])=>{
     this.events$ = of(data);
     console.log(data);
     

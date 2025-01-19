@@ -9,6 +9,8 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { TimeComponent } from './components/time/time.component';
 import { CoursesTreeComponent } from './components/courses-tree/courses-tree.component';
 import { EventsComponent } from './components/events/events.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {path : '' , component: EmptyComponent },
@@ -18,7 +20,17 @@ export const routes: Routes = [
   {path : 'all courses with silibus' , component: CoursesTreeComponent},
   {path : 'add classes' , component: ReactiveFormClassesComponent},
   {path : 'time' , component: TimeComponent},
-  //   {path: 'student details'  , component : StudentDetailsComponent}
-  //   {path: 'information popup' , component: InfromationPopupComponent},
-  {path : 'api' , component: EventsComponent}
+  {path : 'api' , component: EventsComponent},
+  // {path : 'all courses' , loadComponent:()=>
+  // import('./components/courses-list/courses-list.component').then(
+  //   (m)=>m.CoursesListComponent
+  // ) ,
+  // canActivate: [authGuard],},
+  {path : 'home' ,  loadComponent: () =>
+  import('./components/home/home.component').then(
+    (m) => m.HomeComponent
+    ),
+    canActivate: [authGuard], } ,
+    {path : 'auth' , component: AuthComponent}
+    //   {path: 'student details'  , component : StudentDetailsComponent}
 ];
